@@ -1,7 +1,9 @@
 from django.urls import path, include
-from .views import ArticleCRUD
+from .views import ArticleInsetUpdate, ArticleDispay
 
 urlpatterns = [
-    path("crud/", ArticleCRUD.as_view(), name="crud"),
-    path("crud/<int:pk>", ArticleCRUD.as_view(), name="crudPk"),
+    path("show/", ArticleDispay.as_view(), name="show"),
+    path("show/<int:pk>", ArticleDispay.as_view(), name="show"),
+    path("insert-update/", ArticleInsetUpdate.as_view(), name="insert_update"),
+    path("insert-update/<int:pk>", ArticleInsetUpdate.as_view(), name="insert_update"),
     ]
